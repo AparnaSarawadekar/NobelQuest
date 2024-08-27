@@ -1,0 +1,18 @@
+#!/bin/bash
+
+scrapy crawl asmespider -O "data/asmePrize.json"
+scrapy crawl bpspider -O "data/bpPrize.json"
+scrapy crawl chemistrynomineespider -O "data/cnPrize.json"
+scrapy crawl crafoordspider -O "data/csPrize.json"
+scrapy crawl economicsnomineespider -O "data/esPrize.json"
+scrapy crawl fimspider -O "data/fimPrize.json"
+scrapy crawl fieldsspider -O "data/fieldsPrize.json"
+scrapy crawl kavlispider -O "data/kavliPrize.json"
+scrapy crawl literaturenomineespider -O "data/lnPrize.json"
+scrapy crawl mednomineespider -O "data/mnPrize.json"
+scrapy crawl peacenomineespider -O "data/pnPrize.json"
+scrapy crawl physicsnomineespider -O "data/phynPrize.json"
+scrapy crawl tmspider -O "data/tmPrize.json"
+scrapy crawl turingspider -O "data/tsPrize.json"
+scrapy crawl vnspider -O "data/vnPrize.json"
+scrapy crawl wikispider -O "data/onPrize.json"

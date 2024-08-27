@@ -1,0 +1,65 @@
+﻿How to run?
+
+
+For Crawler,
+
+
+Initial Setup and Permissions:
+1. Navigate to the Crawler Directory: Begin by changing the directory to the `wikicrawler` folder using the command line. This step ensures you are in the correct context for executing subsequent commands.   
+
+
+2. Modify Script Permissions: To enable the execution of the `crawl.sh` script located within the `spiders` directory, it is necessary to alter its permissions. This is accomplished with the following command:
+   
+   chmod +x spiders/crawl.sh
+   
+   This command adjusts the script's permissions, granting it executability.
+
+
+Executing the Crawler:
+
+
+3. Run the Crawler Script: With the appropriate permissions set, the crawler can be initiated by executing the `crawl.sh` script. This operation is performed through the following command:
+
+
+ ./spiders/crawl.sh | python3 ./data/jsonJoiner.py
+   
+The use of the pipe (`|`) operator is critical here, as it seamlessly directs the output from the crawler script to the `jsonJoiner.py` Python script. This setup facilitates the immediate processing of the generated JSON files, merging them into a consolidated dataset and removing any duplicate entries.
+
+
+
+
+For Indexing & Searching,
+
+
+Preparation and Permission Setting:
+
+
+1. Setting Execution Permissions: Prior to executing any shell scripts related to the Lucene index, it's imperative to ensure they have the necessary execution permissions. This is achieved with the following commands:
+   
+   chmod +x indexbuilder.sh
+   chmod +x search.sh
+   
+   These commands enable the execution of both the `indexbuilder.sh` and `search.sh` scripts, preparing them for use.
+
+
+Index Creation Process:
+
+
+2. Execute the Index Builder: After navigating to the directory containing the `indexbuilder.sh` script, execute it with the path to the combined JSON file and the desired text analyzer as arguments. This process is initiated with the command:
+   
+   ./indexbuilder.sh <path-to-json> <text-analyzer-type>
+   
+This command triggers the creation of the Lucene index, conventionally named `sample_lucene_index`, which serves as the foundation for subsequent search operations.
+
+
+Executing Search Queries:
+
+
+3. Performing Searches: To execute search queries against the created Lucene index, use the `search.sh` script with the user's query as the argument. For instance:
+   
+   ./search.sh <query>
+
+
+   Considering the dataset comprises information primarily from award-winning pages, suggested search queries include:
+   - “German Scientists”
+   - “Quantum Mechanics”
